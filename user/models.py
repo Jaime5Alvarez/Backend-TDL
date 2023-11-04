@@ -3,7 +3,7 @@ from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
 import uuid
 
 class MyUserManager(BaseUserManager):
-    def create_user(self, email,  password=None):
+    def create_user(self, email,first_name=None, last_name=None,  password=None):
         """
         Creates and saves a User with the given email, date of
         birth and password.
@@ -12,14 +12,14 @@ class MyUserManager(BaseUserManager):
             raise ValueError("Users must have an email address")
 
         user = self.model(
-            email=self.normalize_email(email),
+            email=self.normalize_email(email),first_name=first_name, last_name=last_name
         )
 
         user.set_password(password)
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email,  password=None):
+    def create_superuser(self, email,  password=None ):
         """
         Creates and saves a superuser with the given email, date of
         birth and password.
@@ -42,8 +42,8 @@ class MyUser(AbstractBaseUser):
         max_length=255,
         unique=True,
     )
-    first_name = models.CharField(max_length=50, null=True)
-    last_name = models.CharField(max_length=50, null=True)
+    first_name = models.CharField(max_length=50, null=True, blank=True)
+    last_name = models.CharField(max_length=50, null=True, blank=True)
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
     is_verified = models.BooleanField(default=False)

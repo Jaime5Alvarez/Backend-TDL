@@ -11,7 +11,7 @@ from Utils.send_email import send_email
 from django.conf import settings
 @api_view(['POST'])
 def register_user(request):
-    try:
+    # try:
         serializer = CreateUserSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -26,5 +26,5 @@ def register_user(request):
             send_email(data)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    except Exception as e:
-        return JsonResponse({"message": "server error"}, status=status.HTTP_400_BAD_REQUEST)
+    # except Exception as e:
+    #     return JsonResponse({"message": "server error"}, status=status.HTTP_400_BAD_REQUEST)

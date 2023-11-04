@@ -4,7 +4,7 @@ from rest_framework import serializers
 class CreateUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = MyUser
-        fields = ('email', 'password')
+        fields = ('email', 'password','first_name','last_name')
     def validate(self, data):
         if len(data['password']) < 4:
             raise serializers.ValidationError('Password must be at least 4 characters long')
