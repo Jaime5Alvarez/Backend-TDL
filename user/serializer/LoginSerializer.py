@@ -1,9 +1,7 @@
 from rest_framework import serializers
-from models import MyUser
 from django.contrib import auth
 from rest_framework.exceptions import AuthenticationFailed
 from rest_framework_simplejwt.tokens import RefreshToken
-from datetime import timedelta 
 
 class LoginSerializer(serializers.Serializer):
     email = serializers.EmailField()
