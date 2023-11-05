@@ -47,7 +47,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'user',
      'rest_framework',
+     'corsheaders',
 ]
+CORS_ALLOWED_ORIGINS = [
+    env('FRONTEND_URL'),
+]
+CSRF_TRUSTED_ORIGINS = [
+    env('FRONTEND_URL'),
+    # Otros orígenes confiables si es necesario
+]
+
 AUTH_USER_MODEL = "user.MyUser"
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -57,6 +66,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+        'corsheaders.middleware.CorsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'config.urls'
