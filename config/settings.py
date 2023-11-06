@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'user',
      'rest_framework',
      'corsheaders',
+     'todos'
 ]
 CORS_ALLOWED_ORIGINS = [
     env('FRONTEND_URL'),
