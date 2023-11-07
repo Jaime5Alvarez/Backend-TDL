@@ -25,6 +25,6 @@ def register_user(request):
 
             send_email(data)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        return Response(serializer.errors,  status=status.HTTP_400_BAD_REQUEST,)
     # except Exception as e:
     #     return JsonResponse({"message": "server error"}, status=status.HTTP_400_BAD_REQUEST)
