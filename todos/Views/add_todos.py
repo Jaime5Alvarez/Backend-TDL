@@ -2,11 +2,16 @@ from ..models import Todo
 from rest_framework.response import Response
 from rest_framework import status
 from Utils.get_user_id import get_user_id
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from django.shortcuts import get_object_or_404
 from user.models import MyUser
 from ..serializer.Todoserializer import TodoSerializer
+from rest_framework.permissions import IsAuthenticated
 
+
+
+
+@permission_classes([IsAuthenticated])
 @api_view(['POST'])
 def AddTodos(request):
     try:

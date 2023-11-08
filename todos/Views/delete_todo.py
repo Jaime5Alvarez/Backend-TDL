@@ -1,11 +1,13 @@
 from ..models import Todo
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from django.shortcuts import get_object_or_404
 from ..serializer.Todoserializer import TodoSerializer
+from rest_framework.permissions import IsAuthenticated
 
 @api_view(['DELETE'])
+@permission_classes([IsAuthenticated])
 def DeleteTodo(request, todo_uuid):
     try:
         todo = get_object_or_404(Todo, pk=todo_uuid)
