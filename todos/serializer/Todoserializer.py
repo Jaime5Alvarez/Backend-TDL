@@ -5,4 +5,4 @@ from rest_framework import serializers
 class TodoSerializer(serializers.ModelSerializer):
     class Meta:
         model= Todo
-        fields= ("title","date","completed")
+        fields= '__all__'
