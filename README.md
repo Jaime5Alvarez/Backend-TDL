@@ -5,7 +5,8 @@
 2. Create a python virtual environment (Pipenv for example)
 3. Install all the dependencies in the requirements.txt with pip install -r requirements.txt
 4. Create a .env inside the config folder with the next variables:
--SECRET_KEY=(Your secret key)
+   
+- SECRET_KEY=(Your secret key)
 - DATABASE_NAME=postgres
 - DATABASE_USER=postgres
 - DATABASE_PASS=postgres
