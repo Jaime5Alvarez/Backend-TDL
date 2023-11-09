@@ -17,6 +17,7 @@
 5. Open docker in your desktop
 6. run docker-compose up -d --build
 7. Enjoy
+  
 ## License
 
 This project is licensed under the [MIT License](LICENSE). You are free to modify and extend this API to suit your needs.
@@ -27,4 +28,3 @@ We welcome contributions! If you'd like to improve this project, feel free to fo
 
 If you encounter issues or have questions, please open an issue in the repository, and we will do our best to assist you.
 
-Thank you for choosing Virtus API. We look forward to seeing how you utilize it in your online training application!
