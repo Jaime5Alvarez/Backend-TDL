@@ -7,3 +7,4 @@ config/.env
 */*/__pycache__
 staticfiles_build
 */migrations
+.vercel
