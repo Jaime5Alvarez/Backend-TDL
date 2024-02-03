@@ -4,3 +4,6 @@ Pipfile.lock
 db.sqlite3
 config/.env
 */__pycache__
+*/*/__pycache__
+staticfiles_build
+*/migrations
