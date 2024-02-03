@@ -20,6 +20,7 @@ def EditTodo(request, todo_uuid):
 
         # Update the Todo instance with the new data
         todo.title = request.data['title']
+        todo.description = request.data['description']
         todo.date = request.data['date']
         todo.completed = request.data['completed']
         todo.save()

@@ -21,6 +21,7 @@ def AddTodos(request):
         NewTodo = Todo.objects.create(
             user=user,
             title=request.data['title'],
+            description=request.data['description'],   
             date=request.data['date'],
         )
         serializer = TodoSerializer(NewTodo)
