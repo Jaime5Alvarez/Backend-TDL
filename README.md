@@ -7,9 +7,6 @@
 4. Create a .env inside the config folder with the next variables:
    
 - SECRET_KEY=(Your secret key)
-- DATABASE_NAME=postgres
-- DATABASE_USER=postgres
-- DATABASE_PASS=postgres
 - EMAIL_HOST_USER=your host user
 - EMAIL_HOST_PASSWORD=your email host password
 - BACKEND_URL=http://localhost:8000
