@@ -20,6 +20,7 @@ def AddTodos(request):
             return Response({"message": "User not found"}, status=status.HTTP_400_BAD_REQUEST)
         NewTodo = Todo.objects.create(
             user=user,
+            id=request.data['id'],
             title=request.data['title'],
             description=request.data['description'],   
             date=request.data['date'],
