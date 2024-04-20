@@ -4,16 +4,11 @@
 1. clone the repository
 2. Create a python virtual environment (Pipenv for example)
 3. Install all the dependencies in the requirements.txt with pip install -r requirements.txt
-4. Create a .env inside the config folder with the next variables:
-   
-- SECRET_KEY=(Your secret key)
-- EMAIL_HOST_USER=your host user
-- EMAIL_HOST_PASSWORD=your email host password
-- BACKEND_URL=http://localhost:8000
-- FRONTEND_URL=http://localhost:5173
+4. Create a .env inside the config folder with .env.example variables:
 5. Open docker in your desktop
-6. run docker-compose up -d --build
-7. Enjoy
+6. On the root, create a folder staticfiles_build/static
+7. run docker-compose up -d --build
+8. Enjoy
   
 ## License
 
