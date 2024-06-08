@@ -2,7 +2,12 @@ from django.db import models
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
 import uuid
 
-class MyUserManager(BaseUserManager):
+AUTH_PROVIDERS = (
+    ("email", "Email"),
+    ("google", "Google"),
+)
+class MyUserManager(BaseUserManager): 
+
     def create_user(self, email,first_name=None, last_name=None,  password=None):
         """
         Creates and saves a User with the given email, date of
@@ -47,6 +52,7 @@ class MyUser(AbstractBaseUser):
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
     is_verified = models.BooleanField(default=False)
+    auth_provider = models.CharField(max_length=50, choices=AUTH_PROVIDERS, default="email")
 
     objects = MyUserManager()
 

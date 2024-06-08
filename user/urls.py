@@ -3,10 +3,12 @@ from .Views.register_user import register_user
 from .Views.verify_email import verify_email
 from .Views.login_user import login_user
 from .Views.request_reset_password import RequestPasswordResetEmail
+from .Views.GoogleOauthSignInview import GoogleOauthSignInview
 from rest_framework_simplejwt import views as jwt_views
 
 urlpatterns = [
     path('register/', register_user, name='register-user'),
+    path('google-oauth/', GoogleOauthSignInview.as_view(), name='google'),
    path('email-verify/', verify_email,name="email-verify"),
    path('login/', login_user, name="login-user"),
    path('reset-password/', RequestPasswordResetEmail, name="reset-password-email"),

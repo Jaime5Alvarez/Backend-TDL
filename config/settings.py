@@ -30,7 +30,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG', default=False)
 
-ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app','localhost']
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', 'localhost']
 # RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 # if RENDER_EXTERNAL_HOSTNAME:    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
@@ -53,10 +53,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'user',
-     'rest_framework',
-     'corsheaders',
-     'todos'
+    'rest_framework',
+    'corsheaders',
+    'todos'
 ]
+if DEBUG:
+    CORS_ORIGIN_ALLOW_ALL = True
+
 CORS_ALLOWED_ORIGINS = [
     env('FRONTEND_URL'),
 ]
@@ -171,3 +174,7 @@ SIMPLE_JWT = {
      'ROTATE_REFRESH_TOKENS': True,
      'BLACKLIST_AFTER_ROTATION': True
 }
+
+GOOGLE_CLIENT_ID = env('GOOGLE_CLIENT_ID')
+GOOGLE_CLIENT_SECRET = env('GOOGLE_CLIENT_SECRET')
+SOCIAL_AUTH_PASSWORD = env('SOCIAL_AUTH_PASSWORD')

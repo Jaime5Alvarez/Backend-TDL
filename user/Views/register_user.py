@@ -1,6 +1,5 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from django.http import JsonResponse
 from rest_framework import status
 from ..models import MyUser as User
 from ..serializer.CreateUserSerializer import CreateUserSerializer
