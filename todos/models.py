@@ -12,4 +12,4 @@ class Todo(models.Model):
     user =models.ForeignKey(MyUser,on_delete=models.CASCADE)
 
     def __str__(self):
-        return "holaaa"
+        return self.title
