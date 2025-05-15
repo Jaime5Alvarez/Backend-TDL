@@ -14,7 +14,7 @@ from rest_framework.permissions import IsAuthenticated
 @api_view(['GET'])
 def GetTodos(request):
     user_id = get_user_id(request)
-    todos = Todo.objects.filter(user=user_id)
+    todos = Todo.objects.filter(user=user_id).order_by('-date')[:200]  # type: ignore
     serializer = TodoSerializer(todos, many=True)
 
     return Response(serializer.data, status=status.HTTP_200_OK)

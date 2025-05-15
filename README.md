@@ -7,7 +7,14 @@
 4. Create a .env inside the config folder with .env.example variables:
 5. Open docker in your desktop
 6. On the root, create a folder staticfiles_build/static
-7. run docker-compose up -d --build
+
+```bash
+mkdir staticfiles_build/static
+```
+7. run 
+```bash
+docker-compose up -d --build
+```
 8. Enjoy
   
 ## License

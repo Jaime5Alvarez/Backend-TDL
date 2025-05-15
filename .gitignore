@@ -8,3 +8,4 @@ config/.env
 staticfiles_build
 */migrations
 .vercel
+config/.venv/*

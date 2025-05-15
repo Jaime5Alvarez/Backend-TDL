@@ -8,8 +8,8 @@ class Todo(models.Model):
     description = models.TextField(null=True, blank=True, max_length=500)
     date = models.DateTimeField()
     hour = models.TimeField(null=True,blank=True)
-    completed = models.BooleanField(default=False)
+    completed = models.BooleanField(default=False)  # type: ignore
     user =models.ForeignKey(MyUser,on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.title
+        return str(self.title)
